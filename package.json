@@ -11,7 +11,20 @@
     "preversion": "npm run prod && npm t",
     "postversion": "git push && git push --tags"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/houssemdevs/bpnodeweb"
+  },
+  "keywords": [
+    "nodejs",
+    "web",
+    "service",
+    "koa",
+    "koa-router",
+    "webpack",
+    "typescript",
+    "jest"
+  ],
   "author": "GHIAT Houssem <ghiat.houssem@gmail.com>",
   "license": "ISC",
   "devDependencies": {
