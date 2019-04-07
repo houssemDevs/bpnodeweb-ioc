@@ -1,9 +1,9 @@
 import koa from 'koa';
-import koarouter from 'koa-router';
 
-const app = new koa();
+import router from './routes';
+import { IContextState } from './types/ctxstate';
 
-const router = new koarouter();
+const app = new koa<IContextState>();
 
 app.use(router.routes());
 app.use(router.allowedMethods());
