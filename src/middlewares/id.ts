@@ -1,5 +1,5 @@
-import uuid from 'uuid/v4';
 import { ParameterizedContext } from 'koa';
+import uuid from 'uuid/v4';
 
 import { IContextState } from '../types/ctxstate';
 
