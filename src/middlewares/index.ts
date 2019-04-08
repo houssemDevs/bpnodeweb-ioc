@@ -1,9 +1,10 @@
 import koacompose from 'koa-compose';
 
 import error from './error';
+import favicon from './favicon';
 import id from './id';
 import logger from './logger';
 
-const middlewares = koacompose([id, logger, error]);
+const middlewares = koacompose([favicon, id, logger, error]);
 
 export default middlewares;
