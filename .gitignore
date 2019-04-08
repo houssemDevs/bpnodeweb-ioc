@@ -2,3 +2,5 @@ node_modules
 *lock*
 coverage
 .vscode
+build
+dist
