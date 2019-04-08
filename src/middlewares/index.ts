@@ -1,7 +1,9 @@
 import koacompose from 'koa-compose';
 
-import idMiddleware from './id';
+import error from './error';
+import id from './id';
+import logger from './logger';
 
-const middlewares = koacompose([idMiddleware]);
+const middlewares = koacompose([id, logger, error]);
 
 export default middlewares;
