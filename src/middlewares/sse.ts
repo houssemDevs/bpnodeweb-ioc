@@ -1,6 +1,6 @@
 import { ParameterizedContext } from 'koa';
 
-import { IContextState } from '@/types/ctxstate';
+import { IContextState } from '@/types';
 import StreamServerSentEvent, {
   IStreamServerSentEventOptions,
 } from '@/utils/stream_sse';

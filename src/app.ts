@@ -1,6 +1,6 @@
 import koa from 'koa';
 
-import { IContextState } from './types/ctxstate';
+import { IContextState } from '@/types';
 
 const app = new koa<IContextState>();
 

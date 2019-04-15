@@ -1,6 +1,6 @@
 import { ParameterizedContext } from 'koa';
 
-import { IContextState } from '@/types/ctxstate';
+import { IContextState } from '@/types';
 
 export default async (ctx: ParameterizedContext<IContextState>, next: any) => {
   const start = Date.now();

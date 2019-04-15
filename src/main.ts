@@ -1,13 +1,18 @@
-import app from './app';
+import 'reflect-metadata';
+
+import { KoaInversifyServer } from 'koa-ioc-utils';
+
+import appBase from './app';
+import container from './container';
 import middlewares from './middlewares';
-import router from './routes';
+
+import '@/controllers';
 
 const port = process.env.PORT || 4000;
 
-app.use(middlewares);
+appBase.use(middlewares);
 
-app.use(router.routes());
-app.use(router.allowedMethods());
+const app = new KoaInversifyServer(container, appBase).build();
 
 app.listen(port, () => {
   console.log(`service on ${port} ...`);
