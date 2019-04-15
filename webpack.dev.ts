@@ -10,4 +10,5 @@ export default merge(commonConfig, {
     filename: '[name].js',
     path: path.resolve(__dirname, 'build'),
   },
+  devtool: 'inline-source-map',
 });
