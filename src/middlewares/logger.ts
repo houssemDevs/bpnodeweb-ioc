@@ -1,8 +1,6 @@
-import { ParameterizedContext } from 'koa';
+import { CustomKoaContext } from '@/types';
 
-import { IContextState } from '@/types';
-
-export default async (ctx: ParameterizedContext<IContextState>, next: any) => {
+export default async (ctx: CustomKoaContext, next: any) => {
   const start = Date.now();
   console.log(`--> ${ctx.method} ${ctx.path} ${ctx.ip} ${ctx.state.id}`);
   await next();

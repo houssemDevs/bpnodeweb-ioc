@@ -1,9 +1,8 @@
-import { ParameterizedContext } from 'koa';
 import uuid from 'uuid/v4';
 
-import { IContextState } from '../types';
+import { CustomKoaContext } from '../types';
 
-export default async (ctx: ParameterizedContext<IContextState>, next: any) => {
+export default async (ctx: CustomKoaContext, next: any) => {
   ctx.state.id = uuid();
   await next();
 };

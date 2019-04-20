@@ -1,6 +1,4 @@
-import { ParameterizedContext } from 'koa';
-
-import { IContextState } from '@/types';
+import { CustomKoaContext } from '@/types';
 import StreamServerSentEvent, {
   IStreamServerSentEventOptions,
 } from '@/utils/stream_sse';
@@ -9,7 +7,7 @@ import { Writable } from 'stream';
 export default (
   timeout: number = -1,
   opts?: IStreamServerSentEventOptions,
-) => async (ctx: ParameterizedContext<IContextState>, next: any) => {
+) => async (ctx: CustomKoaContext, next: any) => {
   const sseStream = new StreamServerSentEvent(ctx, opts);
   ctx.state.sse = sseStream;
   await next();
