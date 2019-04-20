@@ -2,7 +2,7 @@ import { ParameterizedContext } from 'koa';
 import request from 'supertest';
 
 import app from '@/app';
-import { IContextState } from '@/types/ctxstate';
+import { IContextState } from '@/types';
 import error from '../src/middlewares/error';
 import id from '../src/middlewares/id';
 import sse from '../src/middlewares/sse';
