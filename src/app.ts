@@ -1,7 +1,10 @@
 import koa from 'koa';
 
-import { IContextState } from '@/types';
+import middlewares from '@/middlewares';
+import { CustomKoaContext } from '@/types';
 
-const app = new koa<IContextState>();
+const app = new koa<CustomKoaContext>();
+
+app.use(middlewares);
 
 export default app;
