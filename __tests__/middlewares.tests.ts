@@ -1,7 +1,7 @@
 import { ParameterizedContext } from 'koa';
-import request from 'supertest';
+import supertest from 'supertest';
 
-import app from '@/app';
+import appBase from '@/app';
 import { IContextState } from '@/types';
 import error from '../src/middlewares/error';
 import id from '../src/middlewares/id';
@@ -37,7 +37,7 @@ describe('Middlewares', () => {
   });
   describe('sse', () => {
     it('should set an sse stream correctly', async () => {
-      app.use(async (ctx: ParameterizedContext<IContextState>, next: any) => {
+      appBase.use(async (ctx: ParameterizedContext<IContextState>, next: any) => {
         await next();
         expect(ctx.state.sse).toBeDefined();
         expect(ctx.body).toBeInstanceOf(StreamServerSentEvent);
@@ -47,9 +47,9 @@ describe('Middlewares', () => {
 
       const endingEvent = 'endsse';
 
-      app.use(sse(-1, { endEvent: endingEvent, log: false }));
+      appBase.use(sse(-1, { endEvent: endingEvent, log: false }));
 
-      const resp = await request(app.callback()).get('/');
+      const resp = await supertest(appBase.callback()).get('/');
 
       expect(resp.get('Content-Type')).toMatch('text/event-stream');
       expect(resp.get('Connection')).toMatch('keep-alive');

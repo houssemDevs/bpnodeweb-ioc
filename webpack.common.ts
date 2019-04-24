@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import cleanPlugin from 'webpack-clean-plugin';
-import nodeExternals from 'webpack-node-externals';
+import webpackNodeExternals from 'webpack-node-externals';
 
 const config: webpack.Configuration = {
   target: 'node',
@@ -25,7 +25,7 @@ const config: webpack.Configuration = {
       },
     ],
   },
-  externals: [nodeExternals()],
+  externals: [webpackNodeExternals()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

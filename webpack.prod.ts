@@ -1,9 +1,9 @@
 import path from 'path';
-import merge from 'webpack-merge';
+import webpackMerge from 'webpack-merge';
 
-import commonConfig from './webpack.common';
+import config from './webpack.common';
 
-export default merge(commonConfig, {
+export default webpackMerge(config, {
   mode: 'production',
   output: {
     filename: '[name].js',

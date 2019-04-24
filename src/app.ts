@@ -1,10 +1,10 @@
-import koa from 'koa';
+import Application from 'koa';
 
 import middlewares from '@/middlewares';
 import { CustomKoaContext } from '@/types';
 
-const app = new koa<CustomKoaContext>();
+const appBase = new Application<CustomKoaContext>();
 
-app.use(middlewares);
+appBase.use(middlewares);
 
-export default app;
+export default appBase;

@@ -16,15 +16,11 @@ export interface IStreamServerSentEventOptions {
 }
 
 export default class StreamServerSentEvent extends Transform<IEvent, string> {
-  private ctx: ParameterizedContext;
+  private readonly ctx: ParameterizedContext;
   private ended: boolean;
-  private endEvent: string;
-  private log: boolean;
-  constructor(
-    ctx: ParameterizedContext,
-    options: IStreamServerSentEventOptions = { endEvent: 'EndSSE', log: true },
-    opts?: TransformOptions,
-  ) {
+  private readonly endEvent: string;
+  private readonly log: boolean;
+  constructor(ctx: ParameterizedContext, options: IStreamServerSentEventOptions = { endEvent: 'EndSSE', log: true }, opts?: TransformOptions) {
     super({ objectMode: true, ...opts });
     this.ctx = ctx;
     this.ended = false;

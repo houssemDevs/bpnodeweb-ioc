@@ -1,13 +1,8 @@
 import { CustomKoaContext } from '@/types';
-import StreamServerSentEvent, {
-  IStreamServerSentEventOptions,
-} from '@/utils/stream_sse';
+import StreamServerSentEvent, { IStreamServerSentEventOptions } from '@/utils/stream_sse';
 import { Writable } from 'stream';
 
-export default (
-  timeout: number = -1,
-  opts?: IStreamServerSentEventOptions,
-) => async (ctx: CustomKoaContext, next: any) => {
+export default (timeout = -1, opts?: IStreamServerSentEventOptions) => async (ctx: CustomKoaContext, next: any) => {
   const sseStream = new StreamServerSentEvent(ctx, opts);
   ctx.state.sse = sseStream;
   await next();

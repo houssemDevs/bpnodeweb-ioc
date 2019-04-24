@@ -7,7 +7,7 @@ import { CustomKoaContext } from '@/types';
 
 @controller('/home')
 export default class HomeController {
-  private _helloWorld: HelloWorldService;
+  private readonly _helloWorld: HelloWorldService;
   constructor(@inject(IOC_TYPES.helloWorld) helloService: HelloWorldService) {
     this._helloWorld = helloService;
   }
