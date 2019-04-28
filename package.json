@@ -67,7 +67,7 @@
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-compress": "^3.0.0",
-    "koa-ioc-utils": "^0.1.5",
+    "koa-ioc-utils": "^0.1.10",
     "koa-router": "^7.4.0",
     "reflect-metadata": "^0.1.13",
     "stronger-typed-streams": "^0.1.2",
