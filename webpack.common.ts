@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import cleanPlugin from 'webpack-clean-plugin';
+
 import webpackNodeExternals from 'webpack-node-externals';
 
 const config: webpack.Configuration = {
@@ -32,7 +32,7 @@ const config: webpack.Configuration = {
     },
     extensions: ['.js', '.ts'],
   },
-  plugins: [new cleanPlugin()],
+  
 };
 
 export default config;
