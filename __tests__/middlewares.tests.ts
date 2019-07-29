@@ -2,11 +2,11 @@ import { ParameterizedContext } from 'koa';
 import supertest from 'supertest';
 
 import appBase from '@/app';
+import error from '@/middlewares/error';
+import id from '@/middlewares/id';
+import sse from '@/middlewares/sse';
 import { IContextState } from '@/types';
-import error from '../src/middlewares/error';
-import id from '../src/middlewares/id';
-import sse from '../src/middlewares/sse';
-import StreamServerSentEvent from '../src/utils/stream_sse';
+import StreamServerSentEvent from '@/utils/stream_sse';
 
 describe('Middlewares', () => {
   describe('id', () => {

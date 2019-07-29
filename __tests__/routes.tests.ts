@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 
-import appBase from '../src/app';
+import appBase from '@/app';
 
 describe('routes', () => {
   describe('/', () => {
